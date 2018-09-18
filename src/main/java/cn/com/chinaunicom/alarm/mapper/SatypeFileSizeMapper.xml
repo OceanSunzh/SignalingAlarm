@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.com.chinaunicom.alarm.mapper.SatypeFileSizeMapper">
+
+    <resultMap type="cn.com.chinaunicom.alarm.domain.SatypeFileSize" id="satypefilesize_result_map">
+        <id property="id" column="id"/>
+        <result property="prov_id" column="prov_id"/>
+        <result property="date_id" column="date_id"/>
+        <result property="hour_id" column="hour_id"/>
+        <result property="minute_id" column="minute_id"/>
+        <result property="sa_type" column="sa_type"/>
+        <result property="size" column="size"/>
+    </resultMap>
+
+    <select id="getAll" resultMap="satypefilesize_result_map">
+        select * from lf_xl_src_prov_date_h_m_satype_file_size limit 10000;
+    </select>
+
+</mapper>
